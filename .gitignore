@@ -1,0 +1,9 @@
+# Jekyll output
+_site/
+
+# Ruby/Bundler
+Gemfile
+Gemfile.lock
+
+# Editor backups
+.DS_Store

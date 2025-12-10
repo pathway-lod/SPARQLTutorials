@@ -1,16 +1,62 @@
+---
+layout: default
+---
+
 SPARQLing Plant Metabolic Pathways Wiki
 =============================================================================================
 
-[Tutorial Pages](https://pathway-lod.github.io/SPARQLTutorials/)
+<p align="center">
+  <a href="https://pathway-lod.github.io/SPARQLTutorials/" style="display:inline-block;padding:12px 28px;background:#2196F3;color:white;border-radius:8px;text-decoration:none;font-size:16px;margin:8px;">
+    Tutorial Pages Home
+  </a>
+  <a href="https://plantmetwiki.bioinformatics.nl/" style="display:inline-block;padding:12px 28px;background:#4CAF50;color:white;border-radius:8px;text-decoration:none;font-size:16px;margin:8px;">
+    PlantMetWiki Webserver
+  </a>
+</p>
 
-[PlantMetWiki webserver](https://plantmetwiki.bioinformatics.nl/)
+Summary 
+---------
+Plant Metabolic Pathways Wiki (PlantMetWiki) is an open online portal for querying linked specialized plant pathway information. PlantMetWiki is available in **Semantic Web format** as Resource Description Framework (**RDF**) and can be accessed via an easy-to-use **SNORQL user interface**. **Pre-written SPARQL queries** are available for users to execute or adapt to retrieve pathway information. **Federated queries** with other linked open data tools are supported, thereby expanding the [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page) framework. 
 
-Index
+
+Using the SPARQL Explorer 
 ---------
 
-* Introduction to RDF and SPARQL by BiGCaT Maastricht University ([presentation](/Presentation_introRDF.pdf))
+Visit our PlantMetWiki SPARQL interface at [plantmetwiki.bioinformatics.nl](https://plantmetwiki.bioinformatics.nl/). 
 
-TO DELETE: 
+Follow the steps below to execute a pre-written query: 
+
+1: **Select a query** from the list of example SPARQL queries. You can **adapt the query** by typing in the SPARQL Query box. 
+
+2: Press the green **Query** button to execute your selected query. 
+
+3: View the **results** on the same page. 
+
+4: You can **select your own** list of example queries from github, by adding the link and click the **refresh button**.  
+
+<p align="center">
+  <img src="Images/Image-NewSnorqlInterface.png" alt="New Snorql Interface" />
+</p>
+
+
+Output 
+---------
+
+Output data is available for download in native RDF format (.ttl), TSV, CSV, and json. 
+
+
+Resources
+---------
+
+* [Introduction to RDF and SPARQL](/Presentation_introRDF.pdf) by BiGCaT Maastricht University
+
+* Wikipathway ontology [The WikiPathways WP Ontology](https://vocabularies.wikipathways.org/)
+
+* [The WikiPathways Semantic Web Portal](https://classic.wikipathways.org/index.php/Portal:Semantic_Web)
+
+TO DELETE below! Including associated data/pages? 
+---------
+**TO DELETE: **
 * 25 minutes: Gene variants in Wikidata:
    * [Understanding the Basics](Assignments/assignment1A.md)
    * [Execute the query and retain results](Assignments/assignment1B.md)
@@ -29,11 +75,13 @@ An [addendum](Assignments/AddendumBioSb2019.md) is available, where we added:
 * More information on where to find Biological and Chemical properties (aka relationships) to expand your query.
 * More detailed explanation of the SERVICE statement (since this is not directly part of SPARQL, but constructed by Wikidata for easier querying).
 
-FINISH Removing 
+**FINISH Part to Delete **
 
-The material for this workshop is available under [CC-BY-SA 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/legalcode) licence.
+License
+---------
 
-<!--- This website includes the workshop material for the [BioSB conference BreakOut Session](https://www.bigcat.unimaas.nl/sparqling-biology-breakout-session-at-biosb-2019/) 
-taking place at the 3th of April 2019 in Lunteren.---!>
+The material for this tutorial is available under [CC-BY-SA 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/legalcode) licence.
 
-<!--- We want to thank all the participants of our workshop, and if you have any more questions and/or comments, feel free to use our [issue tracker](https://github.com/DeniseSl22/SPARQLTutorials/issues) (if you are new to GitHub, please follow the instructions in the addendum to create an account and add an issue). ---!>
+Feedback
+---------
+If you have feedback on this documentation please submit it as a GitHub issue [issue tracker](https://github.com/pathway-lod/SPARQLTutorials/issues).
