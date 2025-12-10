@@ -42,64 +42,65 @@ The site uses Jekyll with the GitHub Pages theme **`jekyll-theme-tactile`** and 
 
 ### 1. Install Ruby (via Homebrew)
 
-    ```
-    brew install ruby
-    ```
+```bash
+brew install ruby
+```
 
 ### 2. Ensure Homebrew Ruby is on your PATH
 
-    For Apple Silicon (M1/M2/M3):
-    ```
-    echo 'export PATH="/opt/homebrew/opt/ruby/bin:$PATH"' >> ~/.zshrc
-    source ~/.zshrc
-    ```
+For Apple Silicon (M1/M2/M3):
+```
+echo 'export PATH="/opt/homebrew/opt/ruby/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
 
-    For Intel Macs:
-    ```
-    echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >> ~/.zshrc
-    source ~/.zshrc
-    ```
+For Intel Macs:
+```
+echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
 
-    You can check Ruby with:
-    ```
-    ruby -v
-    ```
+You can check Ruby with:
+```
+ruby -v
+```
 
 ### 3. Install Bundler
 
-    ```
-    gem install bundler
-    ```
+```
+gem install bundler
+```
 
 ### 4. Install the site dependencies with Bundler
 
-    From the repo root (SPARQLTutorials):
+From the repo root 
+(SPARQLTutorials):
     
-    ```
-    cd /path/to/SPARQLTutorials
-    bundle install
-    ```
+```
+cd /path/to/SPARQLTutorials
+bundle install
+```
 
-    This uses the Gemfile in the repository to install:
-        •	jekyll
-        •	jekyll-theme-tactile
-        •	jekyll-seo-tag
-        •	and any other required gems.
+This uses the Gemfile in the repository to install:
+- jekyll
+- jekyll-theme-tactile
+- jekyll-seo-tag
+- and any other required gems.
 
 
 ### 5. Serve the site locally
-    ```
-    bundle exec jekyll serve
-    ```
+```
+bundle exec jekyll serve
+```
 
-    Jekyll will print something like:
-    ```
-    Server address: http://127.0.0.1:4000/
-    Server running... press ctrl-c to stop.
-    ```
+Jekyll will print something like:
+```
+Server address: http://127.0.0.1:4000/
+Server running... press ctrl-c to stop.
+```
 
-    Open the URL in your browser (usually http://127.0.0.1:4000/￼).
-    You should see the tutorial rendered with the same tactile theme as on GitHub Pages.
+Open the URL in your browser (usually http://127.0.0.1:4000/￼).
+You should see the tutorial rendered with the same tactile theme as on GitHub Pages.
 
 
 ## Feedback
