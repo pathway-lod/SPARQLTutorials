@@ -1,4 +1,4 @@
-SPARQLing Biology: a beginners course.
+SPARQLing Plant Metabolic Pathways Wiki
 =============================================================================================
 
 [HOME](https://bigcat-um.github.io/SPARQLTutorialBioSB2019/)
