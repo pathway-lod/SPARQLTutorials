@@ -54,28 +54,29 @@ Resources
 
 * [The WikiPathways Semantic Web Portal](https://classic.wikipathways.org/index.php/Portal:Semantic_Web)
 
-TO DELETE below! Including associated data/pages? 
+
+Tutorial 
 ---------
-**TO DELETE: **
-* 25 minutes: Gene variants in Wikidata:
-   * [Understanding the Basics](Assignments/assignment1A.md)
-   * [Execute the query and retain results](Assignments/assignment1B.md)
+* Understand the Basics
+   * [Understanding SPARQL Queries](Assignments/assignment1A.md)
+   * [Execute the query and retain results: an example from Wikidata](Assignments/assignment1B.md) --> Need to adapt !? No Wikidata link to PlantMetWiki
    * [Expand and change Query](Assignments/assignment1C.md)
    
-* 25 minutes: Drug Targets in Wikidata
-   * [A more complicated query](Assignments/assignment2A.md)
-   * [Answering Biological Questions](Assignments/assignment2B.md)
+* Federated Queries 
+   * [A more complicated query](Assignments/assignment2A.md) --> TO DELETE! 
+   * [Answering Biological Questions](Assignments/assignment2B.md) --> TO DELETE! 
+  
+* Additional Analyses 
+  * Something about the possibility to do coexpression analyses? 
    
-* 10 minutes: Recap
+* Recap
    * Other Biological databases with RDF ([presentation](/Presentation_introRDF.pdf))
-   * Update your SPARQL query [here](https://github.com/BiGCAT-UM/SPARQLTutorialBioSB2019/tree/master/ParticipantQueries)
+   * Update your SPARQL query [here](./ParticipantQueries/Example1.md)
 
 An [addendum](Assignments/AddendumBioSb2019.md) is available, where we added:
 * Answers to questions asked during the tutorial.
 * More information on where to find Biological and Chemical properties (aka relationships) to expand your query.
 * More detailed explanation of the SERVICE statement (since this is not directly part of SPARQL, but constructed by Wikidata for easier querying).
-
-**FINISH Part to Delete **
 
 License
 ---------
