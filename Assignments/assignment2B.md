@@ -1,4 +1,4 @@
-[HOME](https://denisesl22.github.io/SPARQLTutorials/)
+Return to [HOME](https://pathway-lod.github.io/SPARQLTutorials/)
 
 ## Changing the Question
 
@@ -35,4 +35,4 @@ You can probably think of some other questions you would like to ask to Wikidata
 of the query we are working on now, or find another example on Wikidata you want to understand and expand 
 (ask your instructors for help if needed).
 
-[HOME](https://denisesl22.github.io/SPARQLTutorials/)
+Return to [HOME](https://pathway-lod.github.io/SPARQLTutorials/)

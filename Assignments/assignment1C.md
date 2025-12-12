@@ -1,59 +1,176 @@
-[HOME](https://DeniseSl22.github.io/SPARQLTutorials/)
+Return to [HOME](https://pathway-lod.github.io/SPARQLTutorials/)
 
 ## Change is Coming 
 
-### More diseases:
-We have now limited ourselves to only one disease, colorectal cancer. If we would like to add another disease, such as "breast cancer" (Q128581), we would need change the VALUES line in our query (original below):
+In the previous exercise, we focused on one PlantMetWiki pathway.
+In this section, we will explore how to extend a query by including multiple species, and how to make the results more informative.
+
+SPARQL endpoint: https://plantmetwiki.bioinformatics.nl/sparql
+Graph used in all queries: FROM <http://plantmetwiki.bioinformatics.nl/>
+
+### More species:
+
+So far, we have implicitly focused on a single species by querying a single pathway.
+If we want to explore pathways from multiple species, we can do this by changing the VALUES line in our query.
 
 ```sparql 
 { 
-	VALUES ?disease {wd:Q188874}
+	VALUES ?organism { "Solanum tuberosum" }
 }
 ```
 
-By adding the identifier (Q128581) for the Wikidata entry called "breast cancer" to the VALUES element, we can expand our query to include two diseases. Change the line depicted above in the SPARQL endpoint to the following and click the blue run button again:
+This restricts the query to pathways annotated for potato.
+
+### Adding another species 
+
+Adding another species
+
+Suppose we also want to include pathways from Arabidopsis thaliana.
+We can expand the VALUES block as follows:
+
 
 ```sparql 
 { 
-	VALUES ?disease {wd:Q188874 wd:Q128581}
+	VALUES ?organism {
+		"Solanum tuberosum"
+		"Arabidopsis thaliana"
+}
 }
 ```
 
-You should now see more results, compared to our previous endeavour.
+Now the query will return pathways for both species.
 
-**Question 3:** How will the line above look, when we also want to add stomach carcinoma (Q18556832) to our list?
+### Full query 
 
-(Answers can be found [here](../Answers/AnswersAssignment1.md)). 
+``` 
+PREFIX gpml: <http://vocabularies.wikipathways.org/gpml#>
 
-### Which diseases?
-Since we are obtaining more results by adding more diseases to our query, it would be great if we know to which disease which variant is related. In order to obtain the disease in the results, we should change the _result clause_ section of our SPARQL query:
+SELECT ?organism ?pathway
+FROM <http://plantmetwiki.bioinformatics.nl/>
+WHERE {
+  VALUES ?organism {
+    "Solanum tuberosum"
+    "Arabidopsis thaliana"
+  }
 
-```sparql 
-SELECT ?geneLabel ?variantLabel ?disease
+  ?pathway gpml:organism ?organism .
+}
+LIMIT 200
 ```
 
-Click the play button again; there should now be three columns in your results panel... However, the disease column is only giving us the identifier from Wikidata, not the name of the disease.
+You should now see more results, coming from more than one species.
 
-**Question 4:** How should the line above look, when we want to see the name of the disease in our results panel?
+### Questions 
 
-(Answers can be found [here](../Answers/AnswersAssignment1.md)). 
+<details>
+  <summary><strong>How would the VALUES line look if we also want to include <em>Oryza sativa</em>?</strong></summary>
 
-### Easier querying: Adding diseases with entry search function
-Finding the identifiers for each entry you are interested in, can be done very easily with the entry search function. If we would like to add the disease "ovarian cancer" to our list of diseases of interest, we could do the follwing:
-1. In the SPARQL endpoint, find the VALUES line.
-1. Click just before the last curly bracket '}' .
-1. Type a space ' ', and then 'wd:' .
-1. Now hit Ctrl and the spacebar on your keyboard simultaneously (Windows, for Apple: CMD in stead of Ctrl).
-This should open up the entry search field of Wikidata (see image below).
-![Search Entry query 1](../Images/Search_Entry_Wikidata.jpg)
+  <p><strong>Answer:</strong><br>
+  <code>
+  VALUES ?organism {<br>
+  &nbsp;&nbsp;"Solanum tuberosum"<br>
+  &nbsp;&nbsp;"Arabidopsis thaliana"<br>
+  &nbsp;&nbsp;"Oryza sativa"<br>
+  }
+  </code>
+  </p>
+</details>
 
-1. Type the words 'ovarian cancer' in the search field, which should trigger a search in all entries in Wikidata (see image below).
-![Search Entry query 1](../Images/Search_Entry_Wikidata_Ovarian_Cancer.jpg)
+### Which species?
 
-1. Click on the entry with identifier Q172341; this adds the identifier to your list of VALUES.
-1. Run your query again.
+Since we are now retrieving pathways from multiple species, it is useful to explicitly show the species in the results.
+To do this, we modify the SELECT clause so that the organism is visible:
 
-### Adding protein images
+```sparql 
+SELECT ?organism ?pathway
+```
+If we also want to include the pathway name (when available), we can extend this further:
+
+```sparql 
+SELECT ?organism ?pathway ?pathwayName
+```
+
+And add the corresponding triple pattern:
+```
+OPTIONAL { ?pathway gpml:name ?pathwayName }
+```
+
+### Updated query with pathway names 
+```
+PREFIX gpml: <http://vocabularies.wikipathways.org/gpml#>
+
+SELECT ?organism ?pathway ?pathwayName
+FROM <http://plantmetwiki.bioinformatics.nl/>
+WHERE {
+  VALUES ?organism {
+    "Solanum tuberosum"
+    "Arabidopsis thaliana"
+  }
+
+  ?pathway gpml:organism ?organism .
+  OPTIONAL { ?pathway gpml:name ?pathwayName }
+}
+LIMIT 200
+```
+
+### Questions 
+
+<details>
+  <summary><strong>Which variable adds the species name to the results?</strong></summary>
+  <p><strong>Answer:</strong><br>
+  <code>?organism</code>, filled via <code>?pathway gpml:organism ?organism</code>
+  </p>
+</details>
+
+### Easier querying: discovering species in PlantMetWiki
+
+Unlike Wikidata, PlantMetWiki does not require numeric identifiers (such as Q-numbers).
+Species names are stored directly as literals.
+
+If you are not sure which species are present in the database, you can list them:
+
+```
+PREFIX gpml: <http://vocabularies.wikipathways.org/gpml#>
+
+SELECT DISTINCT ?organism
+FROM <http://plantmetwiki.bioinformatics.nl/>
+WHERE {
+  ?pathway gpml:organism ?organism .
+}
+ORDER BY ?organism
+``` 
+
+This query gives you a controlled vocabulary of species that you can copy directly into a VALUES block.
+
+### Small expansion: count pathways per species
+
+We can also aggregate results to answer questions such as:
+
+Which species have the most pathways in PlantMetWiki?
+
+```
+PREFIX gpml: <http://vocabularies.wikipathways.org/gpml#>
+
+SELECT ?organism (COUNT(DISTINCT ?pathway) AS ?nPathways)
+FROM <http://plantmetwiki.bioinformatics.nl/>
+WHERE {
+  ?pathway gpml:organism ?organism .
+}
+GROUP BY ?organism
+ORDER BY DESC(?nPathways)
+``` 
+
+### Notes on visualization
+
+Unlike Wikidata, the PlantMetWiki SPARQL endpoint does not provide built-in image visualizations.
+
+However, you can:
+	•	export results as tables
+	•	click through to PlantCyc reaction links (as shown in Assignment 1)
+	•	use external tools (e.g. notebooks, R, Python) to visualize pathway statistics
+
+
+#### Adding protein images on Wikidata 
 The SPARQL endpoint of Wikidata has several interesting data visualisation options; we will use one to add protein domain images for the genes we just queried.
 1. Just above the SERVICE element, add the following line:
 
@@ -89,5 +206,5 @@ To continue, you can do one of the following:
 1. Progress to [Assignment 2](../Assignments/assignment2A.md), where we will discuss another query in more detail
 1. Stay with the current query to adapt it to your own needs. Several example questions to work on are given in this [additional assignment](../Assignments/assignment1D.md).
 
-[HOME](https://DeniseSl22.github.io/SPARQLTutorials/)
+Return to [HOME](https://pathway-lod.github.io/SPARQLTutorials/)
 

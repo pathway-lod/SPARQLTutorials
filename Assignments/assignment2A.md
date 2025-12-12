@@ -1,7 +1,7 @@
 Assignment 2: Find drugs for cancers that target genes related to cell proliferation
 =================
 
-[HOME](https://denisesl22.github.io/SPARQLTutorials/)
+Return to [HOME](https://pathway-lod.github.io/SPARQLTutorials/)
 
 During this assignment, we will investigate another example SPARQL query of Wikidata, called ["Find drugs for cancers that target genes related to cell proliferation"](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries/examples#Find_drugs_for_cancers_that_target_genes_related_to_cell_proliferation). We will first go through the basics of a SPARQL query. Second, we will find out how to execute the query and retain or share results. Last, we will expand the query and make other (small) changes, to understand the structure of a SPARQL query better, and see what other data is available in Wikidata.
 
@@ -78,4 +78,4 @@ The following graph should now appear (click on on of the coloured circles in th
 
 In the [last exercise](../Answers/assignment2B.md) related to this assignment, we will look at expansion options for the query above.
 
-[HOME](https://denisesl22.github.io/SPARQLTutorials/)
+Return to [HOME](https://pathway-lod.github.io/SPARQLTutorials/)

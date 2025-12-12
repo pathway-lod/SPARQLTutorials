@@ -19,4 +19,4 @@ There are several options to work with the results of your query. To save your d
 
 We will now make some changes to this query, to understand the structure of SPARQL even better, in the [next exercise](../Assignments/assignment1C.md).
 
-[HOME](https://DeniseSl22.github.io/SPARQLTutorials/)
+Return to [HOME](https://pathway-lod.github.io/SPARQLTutorials/)
