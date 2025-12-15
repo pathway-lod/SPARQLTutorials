@@ -57,7 +57,8 @@ Output data is available for download in native RDF format (.ttl), TSV, CSV, and
 * [Expand and change query]({{ "/Assignments/assignment1C/" | relative_url }})
 
 ### Federated Queries on Wikidata
-* [A more complicated query]({{ "/Assignments/assignment2A/" | relative_url }})
+* [A more complicated query]({{ "/Assignments/assignment2D/" | relative_url }})
+* [Additional analyses]({{ "/Assignments/assignment2A/" | relative_url }})
 * [Answering biological questions]({{ "/Assignments/assignment2B/" | relative_url }})
 
 ### Recap:
