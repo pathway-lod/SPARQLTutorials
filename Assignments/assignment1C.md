@@ -199,19 +199,19 @@ SELECT ?geneLabel ?variantLabel ?diseaseLabel ?image
 2. Click on the play button... We do not see the images directly, we do get a link to the images in a Table. If we want to actually see the images, we need to change the visualisation options of the SPARQL endpoint. 
 3. Directly under the Run button, there is an option called 'Table". Click on this option, and select the option "Image Grid":
 
-![Image Grid query 1](../Images/Image_grid_Wikidata.jpg)
+![Image Grid query 1](/Images/Image_grid_Wikidata.jpg)
 
 Now, the genes in Wikidata which have an image connected to them, are displayed.
 
-![Image example query 1](../Images/Images_genes_Wikidata.JPG)
+![Image example query 1](/Images/Images_genes_Wikidata.JPG)
 
 If you would like to have images for all the genes you queried, you can add these to Wikidata yourself. Since the data in Wikidata is built by community efforts, everyone can get involved. If you would like to know more about becoming a database editor and/or curator for Wikidata, ask one of the instructors for more information.
 
 ## Next assignments:
 
 To continue, you can do one of the following:
-1. Progress to [Assignment 2](../Assignments/assignment2A.md), where we will discuss another query in more detail
-1. Stay with the current query to adapt it to your own needs. Several example questions to work on are given in this [additional assignment](../Assignments/assignment1D.md).
+1. Progress to [Assignment 2](/Assignments/assignment2A.md), where we will discuss another query in more detail
+1. Stay with the current query to adapt it to your own needs. Several example questions to work on are given in this [additional assignment](/Assignments/assignment1D.md).
 
 Return to [HOME](https://pathway-lod.github.io/SPARQLTutorials/)
 

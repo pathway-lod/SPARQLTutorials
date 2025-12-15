@@ -72,19 +72,19 @@ You can uncomment by removing the '#' sign, and run the query again.
 1. Comment the line related to true positives again (from the assignment above).
 1. Change the view from 'Table' to 'Scatter chart':
 
-![Select Scatter Chart](../Images/Scatter_chart_example2.jpg)
+![Select Scatter Chart](/Images/Scatter_chart_example2.jpg)
 
 The following graph should now appear (click on on of the coloured circles in the graph, to obtain the diseaseLabel):
 
-![Select Scatter Chart](../Images/Scatter_chart_visualisation_example2.JPG)
+![Select Scatter Chart](/Images/Scatter_chart_visualisation_example2.JPG)
 
 
 **Question 1A:** Which variables are depicted in which manner? 
 
 **Question 1B:** What would change to the visualisation, if you switch the place of the variables ?geneLabel and  ?biological_processLabel with one another?
 
-(Answers can be found [here](../Answers/AnswersAssignment2.md)). 
+(Answers can be found [here](/Answers/AnswersAssignment2.md)). 
 
-In the [last exercise](../Answers/assignment2B.md) related to this assignment, we will look at expansion options for the query above.
+In the [last exercise](/Answers/assignment2B.md) related to this assignment, we will look at expansion options for the query above.
 
 Return to [HOME](https://pathway-lod.github.io/SPARQLTutorials/)

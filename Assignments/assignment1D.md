@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: "A more complicated query on Wikidata"
-prev: "/Assignments/assignment1C/"
+prev: "/Assignments/assignment2A/"
 prev_title: "Previous page"
 next: "/Assignments/assignment2A/"
 next_title: "Next page"
