@@ -7,3 +7,8 @@ Gemfile.lock
 
 # Editor backups
 .DS_Store
+
+.sass-cache/
+.jekyll-cache/
+.bundle/
+vendor/

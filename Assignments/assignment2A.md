@@ -1,3 +1,12 @@
+---
+layout: docs
+title: "Additional analyses"
+prev: "/Assignments/assignment1D/"
+prev_title: "Previous page"
+next: "/Assignments/assignment2B/"
+next_title: "Next page"
+---
+
 Assignment 2: Find drugs for cancers that target genes related to cell proliferation
 =================
 

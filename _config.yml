@@ -1,3 +1,4 @@
-title: "SPARQLing Plant Metabolic Pathways Wiki"
-description: "Documentation and Tutorial for the PlantMetWiki SPARQL Explorer"
 theme: jekyll-theme-tactile
+permalink: pretty
+# ensure your custom CSS loads
+plugins: []

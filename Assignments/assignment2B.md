@@ -1,4 +1,11 @@
-Return to [HOME](https://pathway-lod.github.io/SPARQLTutorials/)
+---
+layout: docs
+title: "Answering Biological Questions on Wikidata"
+prev: "/"
+prev_title: "Previous page"
+next: "index/"
+next_title: "Return to Home"
+---
 
 ## Changing the Question
 

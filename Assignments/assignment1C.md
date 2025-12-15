@@ -1,4 +1,11 @@
-Return to [HOME](https://pathway-lod.github.io/SPARQLTutorials/)
+---
+layout: docs
+title: "3. Expand and Change Queries"
+prev: "/Assignments/assignment1B"
+prev_title: "Previous page"
+next: "/Assignments/assignment1D/"
+next_title: "Next page"
+---
 
 ## Change is Coming 
 

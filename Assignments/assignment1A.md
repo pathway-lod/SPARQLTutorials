@@ -1,7 +1,11 @@
-1 - Understanding SPARQL Queries on PlantMetWiki
-=================
-
-[HOME](https://pathway-lod.github.io/SPARQLTutorials/)
+---
+layout: docs
+title: "1. Understanding SPARQL Queries"
+prev: "/"
+prev_title: "Home"
+next: "/Assignments/assignment1B/"
+next_title: "Execute & retain results"
+---
 
 During this assignment, we will have a closer look at an example SPARQL query. 
 
@@ -186,13 +190,9 @@ LIMIT 200
 
 #### Notes on labels (why there is no SERVICE clause)
 
-Notes on labels (why there is no SERVICE clause)
 
 Wikidata uses a special label service (SERVICE wikibase:label) to fetch human-readable labels for identifiers.
 
 PlantMetWiki does not use this service. Instead:
 	•	some properties already store readable text (e.g. gpml:name, gpml:organism, gpml:textLabel)
 	•	otherwise we often extract readable identifiers from URIs (using STRAFTER() as shown above)
-
-
-Return to [HOME](https://pathway-lod.github.io/SPARQLTutorials/)

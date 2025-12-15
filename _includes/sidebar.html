@@ -1,0 +1,52 @@
+<nav class="pmw-nav">
+
+  <!-- If we're on the index page, show jump links to sections -->
+  {% if page.url == "/" or page.url == site.baseurl or page.permalink == "/" %}
+    <div class="pmw-nav-section">Index </div>
+    <a href="#summary">Summary</a>
+    <a href="#using-the-sparql-explorer">Using the SPARQL Explorer</a>
+    <a href="#output">Output</a>
+    <a href="#resources">Resources</a>
+    <a href="#tutorial">Tutorial</a>
+  {% endif %}
+
+  <div class="pmw-nav-section">Understand the Basics</div>
+  <a href="{{ site.baseurl }}{% link Assignments/assignment1A.md %}">Understanding SPARQL Queries</a>
+  <a href="{{ site.baseurl }}{% link Assignments/assignment1B.md %}">Execute & retain results</a>
+  <a href="{{ site.baseurl }}{% link Assignments/assignment1C.md %}">Expand and change query</a>
+
+  <div class="pmw-nav-section">Federated Queries</div>
+  <a href="{{ site.baseurl }}{% link Assignments/assignment2A.md %}">A more complicated query</a>
+  <a href="{{ site.baseurl }}{% link Assignments/assignment2B.md %}">Answering biological questions</a>
+
+  <div class="pmw-nav-section">Addendum</div>
+  <a href="{{ site.baseurl }}{% link Assignments/AddendumBioSb2019.md %}">Addendum</a>
+</nav>
+
+{% if page.prev or page.next %}
+  <div class="pmw-side-prevnext">
+    {% if page.prev %}
+      <a class="pmw-side-btn" href="{{ page.prev | relative_url }}">← {{ page.prev_title | default: "Previous" }}</a>
+    {% endif %}
+    {% if page.next %}
+      <a class="pmw-side-btn" href="{{ page.next | relative_url }}">{{ page.next_title | default: "Next" }} →</a>
+    {% endif %}
+  </div>
+{% endif %}
+
+
+
+<div class="pmw-license-inline">
+  <p>
+    The material for this tutorial is available under
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode"
+       target="_blank" rel="license noopener">
+      CC-BY-SA 4.0 International
+    </a>.
+    If you have feedback on this documentation, please submit it as a
+    <a href="https://github.com/pathway-lod/SPARQLTutorials/issues"
+       target="_blank" rel="noopener">
+      GitHub issue
+    </a>.
+  </p>
+</div>
