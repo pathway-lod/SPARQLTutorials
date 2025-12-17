@@ -10,6 +10,8 @@ permalink: /
 ---------
 Plant Metabolic Pathways Wiki (PlantMetWiki) is an open online portal for querying linked specialized plant pathway information. PlantMetWiki is available in **Semantic Web format** as Resource Description Framework (**RDF**) and can be accessed via an easy-to-use **SNORQL user interface**. **Pre-written SPARQL queries** are available for users to execute or adapt to retrieve pathway information. **Federated queries** with other linked open data tools are supported, thereby expanding the [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page) framework. 
 
+By structuring characterized pathways knowledge as Linked Open Data, linking it to predicted biosynthetic clusters, and supporting federated querying, PlantMetWiki supports **hypothesis generation in plant biosynthesis and natural product discovery**. 
+
 
 ## Using the SPARQL Explorer 
 ---------
@@ -37,7 +39,18 @@ Follow the steps below to execute a pre-written query:
 
 Output data is available for download in native RDF format (.ttl), TSV, CSV, and json. 
 
-## Tutorial Pages
+## Use Cases
+---------
+### 1. Diving into Natural Products : and example from castor oil 
+---------
+
+
+
+### 2. Resolving Pathways across Species : an example in Capsicum 
+---------
+
+
+## Tutorial Pages : the SPARQL PlantMetWiki Explorer 
 ---------
 
 {% assign tutorials = site.tutorial | sort: "order" %}
