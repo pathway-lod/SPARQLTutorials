@@ -30,12 +30,21 @@ Follow the steps below to execute a pre-written query:
   <img src="Images/Image-NewSnorqlInterface.png" alt="New Snorql Interface" />
 </p>
 
+* Update your SPARQL query from [this template]({{ "/ParticipantQueries/Example1/" | relative_url }})
 
-## Output 
+## Download Results 
 ---------
 
 Output data is available for download in native RDF format (.ttl), TSV, CSV, and json. 
 
+## Tutorial Pages
+---------
+
+{% assign tutorials = site.tutorial | sort: "order" %}
+
+{% for p in tutorials %}
+* [{{ p.title }}]({{ p.url | relative_url }})
+{% endfor %}
 
 ## Resources
 ---------
@@ -48,24 +57,34 @@ Output data is available for download in native RDF format (.ttl), TSV, CSV, and
 
 * [The WikiPathways Semantic Web Portal](https://classic.wikipathways.org/index.php/Portal:Semantic_Web)
 
-
-
-## Tutorial Pages
+## PlantMetWiki architecture 
 ---------
 
-{% assign tutorials = site.tutorial | sort: "order" %}
+PlantMetWiki is built as a modular Linked Open Data ecosystem.
+The following repositories together form the data pipeline, infrastructure,
+user interfaces, and documentation of the project:
 
-{% for p in tutorials %}
-* [{{ p.title }}]({{ p.url | relative_url }})
-{% endfor %}
+* **Cyc_to_wiki** – Data extraction and preparation from pathway databases  
+  <https://github.com/pathway-lod/Cyc_to_wiki>
 
-## Recap
----------
-* Update your SPARQL query from [this template]({{ "/ParticipantQueries/Example1/" | relative_url }})
-* An [addendum]({{ "/ParticipantQueries/AddendumBioSb2019/" | relative_url }}) iw available containing:
-  * Answers to biological questions on Wikidata.
-  * More information on where to find Biological and Chemical properties (aka relationships) to expand your query.
-  * More detailed explanation of the SERVICE statement (since this is not directly part of SPARQL, but constructed by Wikidata for easier querying).
+* **gpml-to-rdf** – Conversion of GPML pathway files into RDF  
+  <https://github.com/pathway-lod/gpml-to-rdf>
+
+* **map-to-rdf** – Generation of RDF crosslinks with MIBiG and plantiSMASH  
+  <https://github.com/pathway-lod/map-to-rdf>
+
+* **virtuoso-httpd-docker** – Triple store setup and Dockerized deployment of the PlantMetWiki SPARQL endpoint  
+  <https://github.com/pathway-lod/virtuoso-httpd-docker>
+
+* **Snorql-UI** – Web-based SPARQL query interface for PlantMetWiki  
+  <https://github.com/pathway-lod/Snorql-UI>
+
+* **SPARQLQueries** – Curated example SPARQL queries for PlantMetWiki and federated endpoints  
+  <https://github.com/pathway-lod/SPARQLQueries>
+
+* **SPARQLTutorials** – Documentation and tutorial pages for learning how to query PlantMetWiki (this website)  
+  <https://github.com/pathway-lod/SPARQLTutorials>
+
 
 ## Data availability 
 ---------
