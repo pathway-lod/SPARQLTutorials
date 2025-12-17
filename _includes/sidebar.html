@@ -1,40 +1,82 @@
 <nav class="pmw-nav">
 
-  <!-- If we're on the index page, show jump links to sections -->
-  {% if page.url == "/" or page.url == site.baseurl or page.permalink == "/" %}
-    <div class="pmw-nav-section">Index </div>
-    <a href="#summary">Summary</a>
-    <a href="#using-the-sparql-explorer">Using the SPARQL Explorer</a>
-    <a href="#output">Output</a>
-    <a href="#resources">Resources</a>
-    <a href="#tutorial">Tutorial</a>
-  {% endif %}
+  {%- comment -%}
+  ------------------------------------------------------------
+  1 On-page TOC (automatically generated from headings)
+  Uses the "jekyll-toc" include that ships with GitHub Pages:
+  https://github.com/allejo/jekyll-toc
+  ------------------------------------------------------------
+  {%- endcomment -%}
 
-  <div class="pmw-nav-section">Understand the Basics</div>
-  <a href="{{ site.baseurl }}{% link Assignments/assignment1A.md %}">Understanding SPARQL Queries</a>
-  <a href="{{ site.baseurl }}{% link Assignments/assignment1B.md %}">Execute & retain results</a>
-  <a href="{{ site.baseurl }}{% link Assignments/assignment1C.md %}">Expand and change query</a>
+  <div class="pmw-nav-section">On this page</div>
 
-  <div class="pmw-nav-section">Federated Queries</div>
-  <a href="{{ site.baseurl }}{% link Assignments/assignment1D.md %}">A more complicated query</a>
-  <a href="{{ site.baseurl }}{% link Assignments/assignment2A.md %}">Additional analyses</a>
-  <a href="{{ site.baseurl }}{% link Assignments/assignment2B.md %}">Answering biological questions</a>
+  {%- capture toc -%}
+    {%- include toc.html html=content h_min=2 h_max=3 class="pmw-toc" -%}
+  {%- endcapture -%}
 
-  <div class="pmw-nav-section">Addendum</div>
-  <a href="{{ site.baseurl }}{% link Assignments/AddendumBioSb2019.md %}">Addendum</a>
+  {%- if toc contains "<li" -%}
+    {{ toc }}
+  {%- else -%}
+  
+  <div class="pmw-nav-muted">No sections on this page.</div>
+  {%- endif -%}
+
+  <div class="pmw-nav-divider"></div>
+
+  {%- comment -%}
+  ------------------------------------------------------------
+  2 Tutorial navigation (auto from collection)
+  Requires _config.yml:
+    collections:
+      tutorial:
+        output: true
+        permalink: /Assignments/:name/
+  And pages in folder: _tutorial/
+  Each tutorial page should have: order: <number>, title: "..."
+  ------------------------------------------------------------
+  {%- endcomment -%}
+
+  <div class="pmw-nav-section">Tutorial pages</div>
+
+  {%- assign items = site.tutorial | sort: "order" -%}
+  {%- for p in items -%}
+    <a href="{{ p.url | relative_url }}"
+       class="{% if page.url == p.url %}active{% endif %}">
+      {{ p.title }}
+    </a>
+  {%- endfor -%}
+
 </nav>
 
-{% if page.prev or page.next %}
-  <div class="pmw-side-prevnext">
-    {% if page.prev %}
-      <a class="pmw-side-btn" href="{{ page.prev | relative_url }}">← {{ page.prev_title | default: "Previous" }}</a>
-    {% endif %}
-    {% if page.next %}
-      <a class="pmw-side-btn" href="{{ page.next | relative_url }}">{{ page.next_title | default: "Next" }} →</a>
-    {% endif %}
-  </div>
-{% endif %}
 
+{%- comment -%}
+------------------------------------------------------------
+3 Prev/Next buttons (auto, based on order)
+This replaces page.prev/page.next front matter hardcoding.
+------------------------------------------------------------
+{%- endcomment -%}
+
+{%- assign items = site.tutorial | sort: "order" -%}
+{%- assign idx = nil -%}
+{%- for p in items -%}
+  {%- if p.url == page.url -%}
+    {%- assign idx = forloop.index0 -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if idx != nil -%}
+  {%- assign prev = items[idx | minus: 1] -%}
+  {%- assign next = items[idx | plus: 1] -%}
+
+  <div class="pmw-side-prevnext">
+    {%- if prev -%}
+      <a class="pmw-side-btn" href="{{ prev.url | relative_url }}">← {{ prev.title }}</a>
+    {%- endif -%}
+    {%- if next -%}
+      <a class="pmw-side-btn" href="{{ next.url | relative_url }}">{{ next.title }} →</a>
+    {%- endif -%}
+  </div>
+{%- endif -%}
 
 
 <div class="pmw-license-inline">

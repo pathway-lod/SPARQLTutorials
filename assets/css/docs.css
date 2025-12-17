@@ -180,6 +180,51 @@ section {
   color: #555;
 }
 
+.pmw-nav-divider {
+  margin: 12px 0;
+  border-top: 1px solid rgba(0,0,0,0.12);
+}
+
+.pmw-nav-muted {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* make TOC list compact */
+.pmw-toc ul {
+  margin: 6px 0 0 0;
+  padding-left: 16px;
+}
+.pmw-toc li {
+  margin: 4px 0;
+}
+.pmw-toc a {
+  display: block;
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* TOC nesting / depth */
+.pmw-toc { list-style: none; margin: 0; padding: 0; }
+.pmw-toc li { margin: 4px 0; }
+
+/* H2 entries */
+.pmw-toc-l2 > a {
+  font-weight: 600;
+  font-size: 0.90rem;
+}
+
+/* H3 entries (nested under H2 visually) */
+.pmw-toc-l3 {
+  padding-left: 14px;
+}
+
+.pmw-toc-l3 > a {
+  font-weight: 400;
+  font-size: 0.82rem;
+  opacity: 0.95;
+}
+
 /* Prevent any sidebar content from forcing layout wider */
 .pmw-sidebar,
 .pmw-sidebar * {

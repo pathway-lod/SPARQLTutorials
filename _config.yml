@@ -2,3 +2,12 @@ theme: jekyll-theme-tactile
 permalink: pretty
 # ensure your custom CSS loads
 plugins: []
+markdown: kramdown
+kramdown:
+  auto_ids: true
+
+# made a collection of rendered pages
+collections:
+  tutorial:
+    output: true
+    permalink: /Assignments/:name/

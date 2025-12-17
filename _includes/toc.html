@@ -1,0 +1,28 @@
+{%- assign html = include.html | default: page.content -%}
+
+{%- comment -%}
+If we were passed Markdown (no <h tags yet), render it first.
+{%- endcomment -%}
+{%- unless html contains "<h" -%}
+  {%- assign html = html | markdownify -%}
+{%- endunless -%}
+
+<ul class="{{ include.class }}">
+  {%- assign parts = html | split: "<h" -%}
+  {%- for part in parts -%}
+    {%- assign level = part | slice: 0, 1 -%}
+    {%- if level == "2" or level == "3" -%}
+      {%- if part contains 'id="' -%}
+        {%- assign id = part | split: 'id="' | last | split: '"' | first -%}
+        {%- assign pieces = part | split: ">" -%}
+        {%- assign title = pieces[1] | split: "<" | first | strip -%}
+
+        {%- if id != "" and title != "" -%}
+          <li class="pmw-toc-l{{ level }}">
+            <a href="#{{ id }}">{{ title }}</a>
+          </li>
+        {%- endif -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+</ul>

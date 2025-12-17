@@ -2,11 +2,9 @@
 layout: docs
 title: "SPARQLing Plant Metabolic Pathways Wiki"
 description: "Documentation and Tutorial for the PlantMetWiki SPARQL Explorer"
-next: "/Assignments/assignment1/"
+order: 0
+permalink: /
 ---
-
-SPARQLing Plant Metabolic Pathways Wiki
-=============================================================================================
 
 ## Summary 
 ---------
@@ -20,11 +18,11 @@ Visit our PlantMetWiki SPARQL interface at [plantmetwiki.bioinformatics.nl](http
 
 Follow the steps below to execute a pre-written query: 
 
-1: **Select a query** from the list of example SPARQL queries. You can **adapt the query** by typing in the SPARQL Query box. 
+1: **Select a query** from the list of example SPARQL queries. You can **adapt the query** by typing in the SPARQL Query box or from the source repository [pathway-lod/SPARQLQueries](https://github.com/pathway-lod/SPARQLQueries) 
 
 2: Press the green **Query** button to execute your selected query. 
 
-3: View the **results** on the same page. 
+3: View the **result s** on the same page. 
 
 4: You can **select your own** list of example queries from github, by adding the link and click the **refresh button**.  
 
@@ -46,28 +44,30 @@ Output data is available for download in native RDF format (.ttl), TSV, CSV, and
 
 * Wikipathway ontology [The WikiPathways WP Ontology](https://vocabularies.wikipathways.org/)
 
+* [Guide to WikiPathways SPARQL Queries](https://www.wikipathways.org/sparql.html)
+
 * [The WikiPathways Semantic Web Portal](https://classic.wikipathways.org/index.php/Portal:Semantic_Web)
 
 
-## Tutorial 
+
+## Tutorial Pages
 ---------
-### Understand the Basics
-* [Understanding SPARQL Queries]({{ "/Assignments/assignment1A/" | relative_url }})
-* [Execute & retain results]({{ "/Assignments/assignment1B/" | relative_url }})
-* [Expand and change query]({{ "/Assignments/assignment1C/" | relative_url }})
 
-### Federated Queries on Wikidata
-* [A more complicated query]({{ "/Assignments/assignment2D/" | relative_url }})
-* [Additional analyses]({{ "/Assignments/assignment2A/" | relative_url }})
-* [Answering biological questions]({{ "/Assignments/assignment2B/" | relative_url }})
+{% assign tutorials = site.tutorial | sort: "order" %}
 
-### Recap:
+{% for p in tutorials %}
+* [{{ p.title }}]({{ p.url | relative_url }})
+{% endfor %}
+
+## Recap
+---------
 * Update your SPARQL query from [this template]({{ "/ParticipantQueries/Example1/" | relative_url }})
-* An [addendum]({{ "/Assignments/AddendumBioSb2019/" | relative_url }})
+* An [addendum]({{ "/ParticipantQueries/AddendumBioSb2019/" | relative_url }}) iw available containing:
+  * Answers to biological questions on Wikidata.
+  * More information on where to find Biological and Chemical properties (aka relationships) to expand your query.
+  * More detailed explanation of the SERVICE statement (since this is not directly part of SPARQL, but constructed by Wikidata for easier querying).
 
-### Addendum
-An [addendum](Assignments/AddendumBioSb2019.md) is available, containing:
-* Answers to biological questions on Wikidata.
-* More information on where to find Biological and Chemical properties (aka relationships) to expand your query.
-* More detailed explanation of the SERVICE statement (since this is not directly part of SPARQL, but constructed by Wikidata for easier querying).
+## Data availability 
+---------
 
+Data related to PlantMetWiki is available at [Zenodo PlantMetWiki Community](https://zenodo.org/communities/plantmetwiki/). 

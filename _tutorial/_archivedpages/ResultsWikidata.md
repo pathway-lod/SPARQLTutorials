@@ -1,10 +1,6 @@
 ---
 layout: docs
-title: "2. Execute and Retain Results"
-prev: "/Assignments/assignment1A/"
-prev_title: "Previous page"
-next: "/Assignments/assignment1C/"
-next_title: "Next page"
+title: "Execute & retain results"
 ---
 
 ## Run and Save

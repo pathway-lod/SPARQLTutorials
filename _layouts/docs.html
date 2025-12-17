@@ -15,18 +15,3 @@ layout: default
   </main>
 
 </div>
-
-{% if page.prev or page.next %}
-  <div class="pmw-prevnext" style="margin-top:2rem; display:flex; justify-content:space-between; gap:12px;">
-    <div>
-      {% if page.prev %}
-        <a href="{{ page.prev | relative_url }}">← {{ page.prev_title | default: "Previous" }}</a>
-      {% endif %}
-    </div>
-    <div>
-      {% if page.next %}
-        <a href="{{ page.next | relative_url }}">{{ page.next_title | default: "Next" }} →</a>
-      {% endif %}
-    </div>
-  </div>
-{% endif %}
