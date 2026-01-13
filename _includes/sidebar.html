@@ -1,0 +1,95 @@
+<nav class="pmw-nav">
+
+  {%- comment -%}
+  ------------------------------------------------------------
+  1 On-page TOC (automatically generated from headings)
+  Uses the "jekyll-toc" include that ships with GitHub Pages:
+  https://github.com/allejo/jekyll-toc
+  ------------------------------------------------------------
+  {%- endcomment -%}
+
+  <div class="pmw-nav-section">On this page</div>
+
+  {%- capture toc -%}
+    {%- include toc.html html=content h_min=2 h_max=3 class="pmw-toc" -%}
+  {%- endcapture -%}
+
+  {%- if toc contains "<li" -%}
+    {{ toc }}
+  {%- else -%}
+  
+  <div class="pmw-nav-muted">No sections on this page.</div>
+  {%- endif -%}
+
+  <div class="pmw-nav-divider"></div>
+
+  {%- comment -%}
+  ------------------------------------------------------------
+  2 Tutorial navigation (auto from collection)
+  Requires _config.yml:
+    collections:
+      tutorial:
+        output: true
+        permalink: /Assignments/:name/
+  And pages in folder: _tutorial/
+  Each tutorial page should have: order: <number>, title: "..."
+  ------------------------------------------------------------
+  {%- endcomment -%}
+
+  <div class="pmw-nav-section">Tutorial pages</div>
+
+  {%- assign items = site.tutorial | sort: "order" -%}
+  {%- for p in items -%}
+    <a href="{{ p.url | relative_url }}"
+       class="{% if page.url == p.url %}active{% endif %}">
+      {{ p.title }}
+    </a>
+  {%- endfor -%}
+
+</nav>
+
+
+{%- comment -%}
+------------------------------------------------------------
+3 Prev/Next buttons (auto, based on order)
+This replaces page.prev/page.next front matter hardcoding.
+------------------------------------------------------------
+{%- endcomment -%}
+
+{%- assign items = site.tutorial | sort: "order" -%}
+{%- assign idx = nil -%}
+{%- for p in items -%}
+  {%- if p.url == page.url -%}
+    {%- assign idx = forloop.index0 -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if idx != nil -%}
+  {%- assign prev = items[idx | minus: 1] -%}
+  {%- assign next = items[idx | plus: 1] -%}
+
+  <div class="pmw-side-prevnext">
+    {%- if prev -%}
+      <a class="pmw-side-btn" href="{{ prev.url | relative_url }}">← {{ prev.title }}</a>
+    {%- endif -%}
+    {%- if next -%}
+      <a class="pmw-side-btn" href="{{ next.url | relative_url }}">{{ next.title }} →</a>
+    {%- endif -%}
+  </div>
+{%- endif -%}
+
+
+<div class="pmw-license-inline">
+  <p>
+    The material for this tutorial is available under
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode"
+       target="_blank" rel="license noopener">
+      CC-BY-SA 4.0 International
+    </a>.
+    If you have feedback on this documentation, please submit it as a
+    <a href="https://github.com/pathway-lod/SPARQLTutorials/issues"
+       target="_blank" rel="noopener">
+      GitHub issue
+    </a>.
+  </p>
+</div>

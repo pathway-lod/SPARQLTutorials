@@ -1,19 +1,110 @@
-# SPARQLing Biology: a beginners course.
+# SPARQLing Plant Metabolic Pathways Wiki
 
-This [SPARQLing Biology](index.md) workshop material in such a manner that it can be used in other workshops.
+This repository contains the **SPARQLing Plant Metabolic Pathways Wiki** tutorial material, adapted from the original *SPARQLing Biology* workshop so that it can be reused in other workshops.
 
-Read the latest version of the workshopmaterial online at [https://DeniseSl22.github.io/SPARQLTutorials/].
+- 🌱 Online tutorial: <https://pathway-lod.github.io/SPARQLTutorials/>
+- 🌐 PlantMetWiki SPARQL Explorer: <https://plantmetwiki.bioinformatics.nl/>
 
-The material for this workshop is available under [CC-BY-SA 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/legalcode) licence.
+This tutorial was adapted from the course materials available at  
+<https://DeniseSl22.github.io/SPARQLTutorials/>.
 
-Authors:
+License for this tutorial and source code:  
+[CC-BY-SA 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/legalcode)
 
-* Egon Willighagen
-* Marvin Martens
-* Denise Slenter
+## Credits
+
+Authors of the original SPARQLing Biology material:
+
+* Egon Willighagen  
+* Marvin Martens  
+* Denise Slenter  
+
+We would like to acknowledge the material provided at  
+<https://github.com/egonw/fvtworkshop> by Egon Willighagen, Ruud Steltenpool and Lars Willighagen, which has been used to construct this workshop (material is only available in Dutch).
+
+Part of this material has been tested at the  
+[BioSB conference breakout session](https://www.bigcat.unimaas.nl/sparqling-biology-breakout-session-at-biosb-2019/) taking place on the 3rd of April 2019 in Lunteren.  
+The specific material for this workshop can be found at  
+<https://bigcat-um.github.io/SPARQLTutorialBioSB2019/>.
 
 
-We would like to acknowledge the material provided at [https://github.com/egonw/fvtworkshop] by Egon Willighagen, Ruud Steltenpool and Lars Willighagen, which has been used to construct this workshop
-(material is only available in Dutch).
+---
 
-* Part of this Material has been tested at the [BioSb conference](https://www.bigcat.unimaas.nl/sparqling-biology-breakout-session-at-biosb-2019/) taking place at the 3th of April 2019 in Lunteren. The specific material for this workshop can be found [here](https://bigcat-um.github.io/SPARQLTutorialBioSB2019/).
+## Serve this website locally for development (macOS, tested)
+
+These instructions assume:
+
+- macOS
+- [Homebrew](https://brew.sh/) installed
+- You are in this repository (e.g. `cd /path/to/SPARQLTutorials`)
+
+The site uses Jekyll with the GitHub Pages theme **`jekyll-theme-tactile`** and is best run via **Bundler**, so the local environment matches GitHub Pages.
+
+### 1. Install Ruby (via Homebrew)
+
+```bash
+brew install ruby
+```
+
+### 2. Ensure Homebrew Ruby is on your PATH
+
+For Apple Silicon (M1/M2/M3):
+```
+echo 'export PATH="/opt/homebrew/opt/ruby/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+For Intel Macs:
+```
+echo 'export PATH="/usr/local/opt/ruby/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+You can check Ruby with:
+```
+ruby -v
+```
+
+### 3. Install Bundler
+
+```
+gem install bundler
+```
+
+### 4. Install the site dependencies with Bundler
+
+From the repo root 
+(SPARQLTutorials):
+    
+```
+cd /path/to/SPARQLTutorials
+bundle install
+```
+
+This uses the Gemfile in the repository to install:
+- jekyll
+- jekyll-theme-tactile
+- jekyll-seo-tag
+- and any other required gems.
+
+
+### 5. Serve the site locally
+```
+bundle exec jekyll serve --port 4001
+```
+
+Jekyll will print something like:
+```
+Server address: http://127.0.0.1:4001/
+Server running... press ctrl-c to stop.
+```
+
+Open the URL in your browser (usually http://127.0.0.1:4000/￼).
+You should see the tutorial rendered with the same tactile theme as on GitHub Pages.
+
+
+## Feedback
+
+If you have feedback on this tutorial or find an issue, please open a GitHub issue in this repository:
+
+https://github.com/pathway-lod/SPARQLTutorials/issues￼

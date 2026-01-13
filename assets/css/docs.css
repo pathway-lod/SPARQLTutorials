@@ -1,0 +1,300 @@
+:root {
+  --pmw-green: #8aa34a;
+  --pmw-green-dark: #3a5b20;
+  --pmw-green-soft: #8fa35a;
+}
+
+/* Global link color override */
+a {
+  color: var(--pmw-green);
+}
+a:hover {
+  color: var(--pmw-green-dark);
+}
+
+/* ---------------- Topbar ---------------- */
+.pmw-topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 12px 0 16px 0;
+}
+
+.pmw-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.pmw-home img {
+  height: 80px;
+}
+
+.pmw-topbar-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Topbar buttons */
+.pmw-btn {
+  background-color: var(--pmw-green);
+  color: #fff !important;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pmw-btn:hover {
+  background-color: var(--pmw-green-dark);
+}
+
+.pmw-btn-secondary {
+  background-color: transparent;
+  color: var(--pmw-green) !important;
+  border: 1px solid var(--pmw-green);
+}
+
+.pmw-btn-secondary:hover {
+  background-color: var(--pmw-green-soft);
+  color: #fff !important;
+}
+
+/* ---------------- Theme width / centering fixes ---------------- */
+/* Tactile centers a wrapper; make it responsive and less "pushed right" */
+.inner {
+  max-width: none !important;
+  width: min(1600px, calc(100% - 48px)) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+#main_content {
+  width: 100% !important;
+  float: none !important;
+  margin: 0 auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+section {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* ---------------- Docs layout ---------------- */
+.pmw-layout {
+  display: grid;
+  grid-template-columns: clamp(220px, 24vw, 300px) minmax(0, 1fr);
+  column-gap: 24px;
+  align-items: start;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.pmw-content {
+  min-width: 0;
+}
+
+/* ---------------- Sidebar ---------------- */
+.pmw-sidebar {
+  font-size: 0.90rem;
+  line-height: 1.35;
+
+  position: sticky;
+  top: 16px;
+  align-self: start;
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+}
+
+/* Sidebar links */
+.pmw-sidebar a {
+  color: var(--pmw-green);
+}
+
+.pmw-sidebar a:hover {
+  color: var(--pmw-green-dark);
+  text-decoration: underline;
+}
+
+/* Active page (if you add class="active") */
+.pmw-sidebar a.active {
+  font-weight: 700;
+  color: var(--pmw-green-dark);
+}
+
+/* Nav links wrap nicely */
+.pmw-nav a {
+  display: block;
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* Sidebar section titles */
+.pmw-nav-title,
+.pmw-nav-section {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  color: var(--pmw-green-dark);
+}
+
+/* Sidebar prev/next buttons */
+.pmw-side-prevnext {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(0,0,0,0.12);
+  display: grid;
+  gap: 8px;
+}
+
+.pmw-side-btn {
+  display: block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+  background: rgba(110,130,59,0.12);
+  color: var(--pmw-green-dark);
+  font-weight: 600;
+}
+
+.pmw-side-btn:hover {
+  background: rgba(110,130,59,0.18);
+}
+
+/* License + feedback block IN sidebar (wrapped paragraph) */
+.pmw-license-inline {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(0,0,0,0.12);
+  font-size: 0.75rem;
+  line-height: 1.35;
+  color: #555;
+}
+
+.pmw-nav-divider {
+  margin: 12px 0;
+  border-top: 1px solid rgba(0,0,0,0.12);
+}
+
+.pmw-nav-muted {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* make TOC list compact */
+.pmw-toc ul {
+  margin: 6px 0 0 0;
+  padding-left: 16px;
+}
+.pmw-toc li {
+  margin: 4px 0;
+}
+.pmw-toc a {
+  display: block;
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* TOC nesting / depth */
+.pmw-toc { list-style: none; margin: 0; padding: 0; }
+.pmw-toc li { margin: 4px 0; }
+
+/* H2 entries */
+.pmw-toc-l2 > a {
+  font-weight: 600;
+  font-size: 0.90rem;
+}
+
+/* H3 entries (nested under H2 visually) */
+.pmw-toc-l3 {
+  padding-left: 14px;
+}
+
+.pmw-toc-l3 > a {
+  font-weight: 400;
+  font-size: 0.82rem;
+  opacity: 0.95;
+}
+
+/* Prevent any sidebar content from forcing layout wider */
+.pmw-sidebar,
+.pmw-sidebar * {
+  min-width: 0;
+}
+
+/* Force long strings to wrap (URLs, long tokens) */
+.pmw-license-inline {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+/* Prevent any sidebar content from forcing layout wider */
+.pmw-sidebar,
+.pmw-sidebar * {
+  min-width: 0;
+}
+
+/* Force long strings to wrap (URLs, long tokens) */
+.pmw-license-inline {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.pmw-license-inline a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* ---------------- Global heading color override ---------------- */
+/* Fix: var(--pmw-dark-green) didn't exist */
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+}
+
+/* ---------------- Optional generic buttons ---------------- */
+button,
+.button,
+a.button {
+  background-color: var(--pmw-green);
+  color: #fff !important;
+}
+
+button:hover,
+.button:hover,
+a.button:hover {
+  background-color: var(--pmw-green-dark);
+}
+
+/* ---------------- Footer tweak (theme footer) ---------------- */
+.site-footer {
+  margin-top: 0.5rem;
+}
+
+/* ---------------- Responsive ---------------- */
+@media (max-width: 900px) {
+  .pmw-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .pmw-sidebar {
+    position: static;
+    max-height: none;
+    overflow: visible;
+
+    width: auto;
+    max-width: none;
+    border-right: none;
+    padding-right: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+  }
+}
+
