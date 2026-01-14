@@ -41,13 +41,35 @@ Output data is available for download in native RDF format (.ttl), TSV, CSV, and
 
 ## Use Cases
 ---------
-### 1. Diving into Natural Products : and example from castor oil 
----------
 
+PlatMetWiki supports generating insights and hypotheses from plant metabolism to other research areas, including biomarker discovery, toxicology, precision nutrition, and forensic (wildlife) sciences.     
 
+Some examples include: 
 
-### 2. Resolving Pathways across Species : an example in Capsicum 
----------
+### 1. Resolving pathways across species: an example in *Capsicum*
+
+**Focus:** Multispecies pathway modeling and cross-species inference  
+
+Incomplete pathway annotations are common in plant metabolism. This tutorial shows how PlantMetWiki can be used to compare pathway information across related species and leverage shared reactions, substrates, and products to resolve missing biosynthetic steps.
+
+**Research question:**  
+*If a reaction or enzyme is present in* *Capsicum annuum* *but missing in* *Capsicum frutescens*, *can its presence be inferred based on shared pathway context across species?*
+
+👉 **[Read the full tutorial →](Assignments/capsicum)**
+
+---
+
+### 2. Diving into natural products: an example from castor oil
+
+**Focus:** Molecule-centric exploration of biosynthesis and chemistry  
+
+Natural product research often starts from a molecule rather than a pathway. This tutorial demonstrates how PlantMetWiki can be used to identify the plant pathways and species associated with specific natural product molecules, and how this information can be enriched with external chemical knowledge using federated queries.
+
+**Research question:**  
+*Which plant species and biosynthetic pathways are associated with natural product molecules found in castor oil, and how can their biochemical context be explored using linked open data?*
+
+👉 **[Read the full tutorial →](Assignments/castoroil)**
+
 
 
 ## Tutorial Pages : the SPARQL PlantMetWiki Explorer 
