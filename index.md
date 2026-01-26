@@ -68,7 +68,9 @@ Natural product research often starts from a molecule rather than a pathway. Thi
 **Research question:**  
 *Which plant species and biosynthetic pathways are associated with natural product molecules found in castor oil, and how can their biochemical context be explored using linked open data?*
 
-👉 **[Read the full tutorial →](Assignments/castoroil)**
+👉 **[Read the full tutorial on Castor oil →](Assignments/castoroil)**
+
+👉 **[Read the full tutorial on Theobromine →](Assignments/theobromine)**
 
 
 

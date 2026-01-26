@@ -88,13 +88,45 @@ This uses the Gemfile in the repository to install:
 - and any other required gems.
 
 
-### 5. Serve the site locally
+### 5. Serve the site locally (macOS)
+
+### Why this setup
+macOS ships with a locked “system Ruby” that often causes permission errors when installing gems.
+To avoid this, use Homebrew Ruby and install gems locally in the repo.
+
+
+#### 1 Install Ruby via Homebrew
+```bash
+brew install ruby
 ```
+
+##### 2 Ensure Homebrew Ruby is used (IMPORTANT)
+```bash 
+echo 'export PATH="$(brew --prefix ruby)/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+
+which ruby
+ruby -v
+```
+
+If which ruby prints /usr/bin/ruby, you are still using system Ruby — fix your PATH before continuing.
+
+#### 3  Install Bundler and dependencies (local install)
+```bash 
+gem install bundler
+
+bundle config set --local path vendor/bundle
+bundle install
+```
+
+#### 4 Run the site locally 
+
+```bash 
 bundle exec jekyll serve --port 4001
 ```
 
 Jekyll will print something like:
-```
+```bash 
 Server address: http://127.0.0.1:4001/
 Server running... press ctrl-c to stop.
 ```
