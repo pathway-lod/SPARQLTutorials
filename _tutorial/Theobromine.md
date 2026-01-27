@@ -164,6 +164,11 @@ By clicking on the [DSSTox / CompTox url](https://comptox.epa.gov/dashboard/chem
 
 For our breeding program, this tells us what target concentration range cacao beans should stay below to be considered “pet-safer” while still palatable for humans.
 
+## Which medical conditions are caused by theobromine? 
+
+we can ask Wikidata which medical conditions are explicitly annotated as being caused by theobromine (property has cause = P828). Our federated query returns the item theobromine poisoning (Q1550819), described as an “overdose reaction to the xanthine alkaloid theobromine” and classified as a subclass of poisoning. This anchors the biochemical story in a concrete toxicological outcome and justifies why lowering theobromine in cacao is not only a flavour choice, but also a relevant safety consideration—especially for dogs.
+
+[SPARQL query](https://edu.nl/3debg)
 
 ## Pharmacological role of theobromine 
 
@@ -205,13 +210,10 @@ This is a nice example of “semantic pivot”: from **compound → article meta
 
 We can make sure that theobromine is not a precursor of important natural products that are important qualities in cacao. 
 
-First, we run a query to see all of the otehr metabolites taht are present in the theobromine pathwyas 
+First, we run a query to see all of the otehr metabolites taht are present in the theobromine pathwyas, and we find their Wikidata entry. 
 
-[SPARQL query](https://edu.nl/4x7yh)
+[SPARQL query](https://edu.nl/jgfae)
 
-Which of these metabolites from theobromine pathways are in LOTUS/Wikidata?
-
-[SPARQL query](https://edu.nl/m86d6)
 
 In PlantMetWiki, theobromine is described as a direct biosynthetic precursor of caffeine in the methylxanthine pathway. 
 
@@ -266,6 +268,35 @@ Together with the “theobromine → caffeine” step, this reveals the familiar
 In other words, PlantMetWiki lets us enumerate the **immediate precursors** of
 theobromine as concrete chemical entities (with InChIKeys), not just generic
 “methylated xanthines”.
+
+## Wikidata molecular function for theobromine: Does it match with PlantMetWiki/PMN knowledge? 
+
+So far, we've looked at specific enzymes in cacao that convert theobromine to caffeine.
+Wikidata also captures this as a **generic molecular function**:
+
+> *theobromine:S-adenosyl-L-methionine 1-N-methyltransferase activity*  
+> described as  
+> “Catalysis of the reaction: theobromine + S-adenosyl-L-methionine <=> H⁺ + caffeine + S-adenosyl-L-homocysteine”
+
+Our federated query to Wikidata retrieves this molecular function item (Q27124976),
+annotated as:
+
+- **instance of**: molecular function  
+- **subclass of**: methyltransferase activity  
+
+This cleanly summarizes what our pathway-level analysis already suggested:
+the key step that *consumes* theobromine is a **SAM-dependent N-methyltransferase**
+that produces caffeine.
+
+[SPARQL query](https://edu.nl/rg3cb)
+
+This gives us two complementary views:
+
+>PlantMetWiki tells us **which concrete genes** in cacao and related species
+  perform this function.
+
+>Wikidata’s molecular function term captures the **abstract reaction**, which
+  we can reuse across species, ontologies, and functional annotation tools.
 
 ## Enzymes synthetizing and consuming theobromine : identify genetic "knobs" you can turn 
 
@@ -328,7 +359,7 @@ metabolic networks.
 
 ## What is the SMILES string from theobromine? 
 
-Now you want to draw theobromine in Chemdraw or any chemical sketiching tool. To do that you query PlantMetWiki to find the SMILE of theobromine: paste the SMILE on [PubChem Sketcher](https://pubchem.ncbi.nlm.nih.gov/edit2/index.html) to see the compound structure. 
+Now you want to draw theobromine in Chemdraw or any chemical sketiching tool. To do that you query PlantMetWiki to find the SMILES of theobromine: paste the SMILES on [PubChem Sketcher](https://pubchem.ncbi.nlm.nih.gov/edit2/index.html) to see the compound structure. 
 
 [SPARQL query](https://edu.nl/r4e8m)
 
