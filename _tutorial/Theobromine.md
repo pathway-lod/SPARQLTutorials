@@ -212,8 +212,15 @@ We can make sure that theobromine is not a precursor of important natural produc
 
 First, we run a query to see all of the otehr metabolites taht are present in the theobromine pathwyas, and we find their Wikidata entry. 
 
-[SPARQL query](https://edu.nl/jgfae)
+We can also ask the query if PlantMetWiki and Wikidata represent the same organism as LOTUS/Wikidata. We represent this information in the column `sameLotusOrganism`.
 
+[SPARQL query](https://edu.nl/6v7yw)
+
+> Linking biosynthetic and chemical information from PlantMetWiki to Wikidata with Federated queries allows to see what compounds are known to PLantMetWiki and in which species and which are known to LOTUS/Wikidata. 
+
+We can also explicitly check which are the taxa not matching, for instance to represent them in an image: 
+
+[SPARQL query](https://edu.nl/c897b)
 
 In PlantMetWiki, theobromine is described as a direct biosynthetic precursor of caffeine in the methylxanthine pathway. 
 
