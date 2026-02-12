@@ -86,6 +86,8 @@ Natural product research often starts from a molecule rather than a pathway. Thi
 ## Resources
 ---------
 
+* [Using SPARQL to query Life Science Databases](https://bigcat-um.github.io/PRA3006-SPARQL/)
+
 * [Introduction to RDF and SPARQL](/Presentation_introRDF.pdf) by BiGCaT Maastricht University
 
 * Wikipathway ontology [The WikiPathways WP Ontology](https://vocabularies.wikipathways.org/)
