@@ -96,6 +96,8 @@ Natural product research often starts from a molecule rather than a pathway. Thi
 
 * [The WikiPathways Semantic Web Portal](https://classic.wikipathways.org/index.php/Portal:Semantic_Web)
 
+* [Wikipathways and Multiomics presentation](https://zenodo.org/records/18654362)
+
 ## PlantMetWiki architecture 
 ---------
 
