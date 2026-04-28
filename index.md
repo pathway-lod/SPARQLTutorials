@@ -29,7 +29,7 @@ Follow the steps below to execute a pre-written query:
 4: You can **select your own** list of example queries from github, by adding the link and click the **refresh button**.  
 
 <p align="center">
-  <img src="Images/Image-PlantMetWikiInterface.png" alt="New Snorql Interface" />
+  <img src="Images/Images-PlantMetWikiInterface.png" alt="New Snorql Interface" />
 </p>
 
 * Update your SPARQL query from [this template]({{ "/ParticipantQueries/Example1/" | relative_url }})
