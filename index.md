@@ -29,7 +29,7 @@ Follow the steps below to execute a pre-written query:
 4: You can **select your own** list of example queries from github, by adding the link and click the **refresh button**.  
 
 <p align="center">
-  <img src="Images/Image-NewSnorqlInterface.png" alt="New Snorql Interface" />
+  <img src="Images/Images-PlantMetWikiInterface.png" alt="New Snorql Interface" />
 </p>
 
 * Update your SPARQL query from [this template]({{ "/ParticipantQueries/Example1/" | relative_url }})
@@ -41,13 +41,37 @@ Output data is available for download in native RDF format (.ttl), TSV, CSV, and
 
 ## Use Cases
 ---------
-### 1. Diving into Natural Products : and example from castor oil 
----------
 
+PlatMetWiki supports generating insights and hypotheses from plant metabolism to other research areas, including biomarker discovery, toxicology, precision nutrition, and forensic (wildlife) sciences.     
 
+Some examples include: 
 
-### 2. Resolving Pathways across Species : an example in Capsicum 
----------
+### 1. Resolving pathways across species: an example in *Capsicum*
+
+**Focus:** Multispecies pathway modeling and cross-species inference  
+
+Incomplete pathway annotations are common in plant metabolism. This tutorial shows how PlantMetWiki can be used to compare pathway information across related species and leverage shared reactions, substrates, and products to resolve missing biosynthetic steps.
+
+**Research question:**  
+*If a reaction or enzyme is present in* *Capsicum annuum* *but missing in* *Capsicum frutescens*, *can its presence be inferred based on shared pathway context across species?*
+
+👉 **[Read the full tutorial →](Assignments/capsicum)**
+
+---
+
+### 2. Diving into natural products: an example from castor oil
+
+**Focus:** Molecule-centric exploration of biosynthesis and chemistry  
+
+Natural product research often starts from a molecule rather than a pathway. This tutorial demonstrates how PlantMetWiki can be used to identify the plant pathways and species associated with specific natural product molecules, and how this information can be enriched with external chemical knowledge using federated queries.
+
+**Research question:**  
+*Which plant species and biosynthetic pathways are associated with natural product molecules found in castor oil, and how can their biochemical context be explored using linked open data?*
+
+👉 **[Read the full tutorial on Castor oil →](Assignments/castoroil)**
+
+👉 **[Read the full tutorial on Theobromine →](Assignments/theobromine)**
+
 
 
 ## Tutorial Pages : the SPARQL PlantMetWiki Explorer 
@@ -62,6 +86,8 @@ Output data is available for download in native RDF format (.ttl), TSV, CSV, and
 ## Resources
 ---------
 
+* [Using SPARQL to query Life Science Databases](https://bigcat-um.github.io/PRA3006-SPARQL/)
+
 * [Introduction to RDF and SPARQL](/Presentation_introRDF.pdf) by BiGCaT Maastricht University
 
 * Wikipathway ontology [The WikiPathways WP Ontology](https://vocabularies.wikipathways.org/)
@@ -69,6 +95,8 @@ Output data is available for download in native RDF format (.ttl), TSV, CSV, and
 * [Guide to WikiPathways SPARQL Queries](https://www.wikipathways.org/sparql.html)
 
 * [The WikiPathways Semantic Web Portal](https://classic.wikipathways.org/index.php/Portal:Semantic_Web)
+
+* [Wikipathways and Multiomics presentation](https://zenodo.org/records/18654362)
 
 ## PlantMetWiki architecture 
 ---------
