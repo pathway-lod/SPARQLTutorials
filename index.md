@@ -1,36 +1,133 @@
-SPARQLing Biology: a beginners course.
-=============================================================================================
+---
+layout: docs
+title: "SPARQLing Plant Metabolic Pathways Wiki"
+description: "Documentation and Tutorial for the PlantMetWiki SPARQL Explorer"
+order: 0
+permalink: /
+---
 
-[HOME](https://bigcat-um.github.io/SPARQLTutorialBioSB2019/)
+## Summary 
+---------
+Plant Metabolic Pathways Wiki (PlantMetWiki) is an open online portal for querying linked specialized plant pathway information. PlantMetWiki is available in **Semantic Web format** as Resource Description Framework (**RDF**) and can be accessed via an easy-to-use **SNORQL user interface**. **Pre-written SPARQL queries** are available for users to execute or adapt to retrieve pathway information. **Federated queries** with other linked open data tools are supported, thereby expanding the [Wikidata](https://www.wikidata.org/wiki/Wikidata:Main_Page) framework. 
 
-Program
+By structuring characterized pathways knowledge as Linked Open Data, linking it to predicted biosynthetic clusters, and supporting federated querying, PlantMetWiki supports **hypothesis generation in plant biosynthesis and natural product discovery**. 
+
+
+## Using the SPARQL Explorer 
 ---------
 
-This workshop consists out of four parts:
+Visit our PlantMetWiki SPARQL interface at [plantmetwiki.bioinformatics.nl](https://plantmetwiki.bioinformatics.nl/). 
 
-* 30 minutes: Introduction to RDF and SPARQL ([presentation](/Presentation_introRDF.pdf))
+Follow the steps below to execute a pre-written query: 
 
-* 25 minutes: Gene variants in Wikidata:
-   * [Understanding the Basics](Assignments/assignment1A.md)
-   * [Execute the query and retain results](Assignments/assignment1B.md)
-   * [Expand and change Query](Assignments/assignment1C.md)
-   
-* 25 minutes: Drug Targets in Wikidata
-   * [A more complicated query](Assignments/assignment2A.md)
-   * [Answering Biological Questions](Assignments/assignment2B.md)
-   
-* 10 minutes: Recap
-   * Other Biological databases with RDF ([presentation](/Presentation_introRDF.pdf))
-   * Update your SPARQL query [here](https://github.com/BiGCAT-UM/SPARQLTutorialBioSB2019/tree/master/ParticipantQueries)
+1: **Select a query** from the list of example SPARQL queries. You can **adapt the query** by typing in the SPARQL Query box or from the source repository [pathway-lod/SPARQLQueries](https://github.com/pathway-lod/SPARQLQueries) 
 
-An [addendum](Assignments/AddendumBioSb2019.md) is available, where we added:
-* Answers to questions asked during the tutorial.
-* More information on where to find Biological and Chemical properties (aka relationships) to expand your query.
-* More detailed explanation of the SERVICE statement (since this is not directly part of SPARQL, but constructed by Wikidata for easier querying).
+2: Press the green **Query** button to execute your selected query. 
 
-The material for this workshop is available under [CC-BY-SA 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/legalcode) licence.
+3: View the **result s** on the same page. 
 
-<!--- This website includes the workshop material for the [BioSB conference BreakOut Session](https://www.bigcat.unimaas.nl/sparqling-biology-breakout-session-at-biosb-2019/) 
-taking place at the 3th of April 2019 in Lunteren.---!>
+4: You can **select your own** list of example queries from github, by adding the link and click the **refresh button**.  
 
-<!--- We want to thank all the participants of our workshop, and if you have any more questions and/or comments, feel free to use our [issue tracker](https://github.com/DeniseSl22/SPARQLTutorials/issues) (if you are new to GitHub, please follow the instructions in the addendum to create an account and add an issue). ---!>
+<p align="center">
+  <img src="Images/Images-PlantMetWikiInterface.png" alt="New Snorql Interface" />
+</p>
+
+* Update your SPARQL query from [this template]({{ "/ParticipantQueries/Example1/" | relative_url }})
+
+## Download Results 
+---------
+
+Output data is available for download in native RDF format (.ttl), TSV, CSV, and json. 
+
+## Use Cases
+---------
+
+PlatMetWiki supports generating insights and hypotheses from plant metabolism to other research areas, including biomarker discovery, toxicology, precision nutrition, and forensic (wildlife) sciences.     
+
+Some examples include: 
+
+### 1. Resolving pathways across species: an example in *Capsicum*
+
+**Focus:** Multispecies pathway modeling and cross-species inference  
+
+Incomplete pathway annotations are common in plant metabolism. This tutorial shows how PlantMetWiki can be used to compare pathway information across related species and leverage shared reactions, substrates, and products to resolve missing biosynthetic steps.
+
+**Research question:**  
+*If a reaction or enzyme is present in* *Capsicum annuum* *but missing in* *Capsicum frutescens*, *can its presence be inferred based on shared pathway context across species?*
+
+👉 **[Read the full tutorial →](Assignments/capsicum)**
+
+---
+
+### 2. Diving into natural products: an example from castor oil
+
+**Focus:** Molecule-centric exploration of biosynthesis and chemistry  
+
+Natural product research often starts from a molecule rather than a pathway. This tutorial demonstrates how PlantMetWiki can be used to identify the plant pathways and species associated with specific natural product molecules, and how this information can be enriched with external chemical knowledge using federated queries.
+
+**Research question:**  
+*Which plant species and biosynthetic pathways are associated with natural product molecules found in castor oil, and how can their biochemical context be explored using linked open data?*
+
+👉 **[Read the full tutorial on Castor oil →](Assignments/castoroil)**
+
+👉 **[Read the full tutorial on Theobromine →](Assignments/theobromine)**
+
+
+
+## Tutorial Pages : the SPARQL PlantMetWiki Explorer 
+---------
+
+{% assign tutorials = site.tutorial | sort: "order" %}
+
+{% for p in tutorials %}
+* [{{ p.title }}]({{ p.url | relative_url }})
+{% endfor %}
+
+## Resources
+---------
+
+* [Using SPARQL to query Life Science Databases](https://bigcat-um.github.io/PRA3006-SPARQL/)
+
+* [Introduction to RDF and SPARQL](/Presentation_introRDF.pdf) by BiGCaT Maastricht University
+
+* Wikipathway ontology [The WikiPathways WP Ontology](https://vocabularies.wikipathways.org/)
+
+* [Guide to WikiPathways SPARQL Queries](https://www.wikipathways.org/sparql.html)
+
+* [The WikiPathways Semantic Web Portal](https://classic.wikipathways.org/index.php/Portal:Semantic_Web)
+
+* [Wikipathways and Multiomics presentation](https://zenodo.org/records/18654362)
+
+## PlantMetWiki architecture 
+---------
+
+PlantMetWiki is built as a modular Linked Open Data ecosystem.
+The following repositories together form the data pipeline, infrastructure,
+user interfaces, and documentation of the project:
+
+* **Cyc_to_wiki** – Data extraction and preparation from pathway databases  
+  <https://github.com/pathway-lod/Cyc_to_wiki>
+
+* **gpml-to-rdf** – Conversion of GPML pathway files into RDF  
+  <https://github.com/pathway-lod/gpml-to-rdf>
+
+* **map-to-rdf** – Generation of RDF crosslinks with MIBiG and plantiSMASH  
+  <https://github.com/pathway-lod/map-to-rdf>
+
+* **virtuoso-httpd-docker** – Triple store setup and Dockerized deployment of the PlantMetWiki SPARQL endpoint  
+  <https://github.com/pathway-lod/virtuoso-httpd-docker>
+
+* **Snorql-UI** – Web-based SPARQL query interface for PlantMetWiki  
+  <https://github.com/pathway-lod/Snorql-UI>
+
+* **SPARQLQueries** – Curated example SPARQL queries for PlantMetWiki and federated endpoints  
+  <https://github.com/pathway-lod/SPARQLQueries>
+
+* **SPARQLTutorials** – Documentation and tutorial pages for learning how to query PlantMetWiki (this website)  
+  <https://github.com/pathway-lod/SPARQLTutorials>
+
+
+## Data availability 
+---------
+
+Data related to PlantMetWiki is available at [Zenodo PlantMetWiki Community](https://zenodo.org/communities/plantmetwiki/). 
